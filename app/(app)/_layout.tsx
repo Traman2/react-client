@@ -10,8 +10,12 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: colorScheme === 'dark' ? '#000' : '#000',
+        tabBarActiveTintColor: '#fff',
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: '#2a2a2a',
+          borderTopColor: '#2a2a2a',
+        },
       }}>
       
       <Tabs.Screen
@@ -22,7 +26,7 @@ export default function TabLayout() {
               <Ionicons name={focused ? 'home' : 'home-outline'} size={24} color={color} />
             ),
             tabBarLabel: ({ focused }) => (
-              <Text className={`text-xs text-black ${focused ? 'opacity-100' : 'opacity-40'}`}>
+              <Text className={`text-xs text-white ${focused ? 'opacity-100' : 'opacity-40'}`}>
                 Home
               </Text>
             ),
@@ -37,7 +41,7 @@ export default function TabLayout() {
               <Ionicons name={focused ? 'cash' : 'cash-outline'} size={24} color={color} />
             ),
             tabBarLabel: ({ focused }) => (
-              <Text className={`text-xs text-black ${focused ? 'opacity-100' : 'opacity-40'}`}>
+              <Text className={`text-xs text-white ${focused ? 'opacity-100' : 'opacity-40'}`}>
                 Budget
               </Text>
             ),
@@ -52,7 +56,7 @@ export default function TabLayout() {
               <Ionicons name={focused ? 'airplane' : 'airplane-outline'} size={24} color={color} />
             ),
             tabBarLabel: ({ focused }) => (
-              <Text className={`text-xs text-black ${focused ? 'opacity-100' : 'opacity-40'}`}>
+              <Text className={`text-xs text-white ${focused ? 'opacity-100' : 'opacity-40'}`}>
                 Trips
               </Text>
             ),
@@ -67,7 +71,7 @@ export default function TabLayout() {
               <Ionicons name={focused ? 'school' : 'school-outline'} size={24} color={color} />
             ),
             tabBarLabel: ({ focused }) => (
-              <Text className={`text-xs text-black ${focused ? 'opacity-100' : 'opacity-40'}`}>
+              <Text className={`text-xs text-white ${focused ? 'opacity-100' : 'opacity-40'}`}>
                 School
               </Text>
             ),
@@ -82,7 +86,7 @@ export default function TabLayout() {
               <Ionicons name={focused ? 'settings' : 'settings-outline'} size={24} color={color} />
             ),
             tabBarLabel: ({ focused }) => (
-              <Text className={`text-xs text-black ${focused ? 'opacity-100' : 'opacity-40'}`}>
+              <Text className={`text-xs text-white ${focused ? 'opacity-100' : 'opacity-40'}`}>
                 Settings
               </Text>
             ),

@@ -2,9 +2,25 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useSession } from '../contexts/auth';
 import { Ionicons } from '@expo/vector-icons';
+import { useFocusEffect } from 'expo-router';
+import { useCallback } from 'react';
 
 export default function SignIn() {
-  const { signIn } = useSession();
+  const { signIn, biometricEnabled } = useSession();
+
+  // Auto-trigger biometrics when screen is focused
+  useFocusEffect(
+    useCallback(() => {
+      if (biometricEnabled) {
+        // Small delay to ensure screen is fully rendered
+        const timer = setTimeout(async () => {
+          await signIn();
+        }, 300);
+
+        return () => clearTimeout(timer);
+      }
+    }, [biometricEnabled])
+  );
 
   const handleBiometricLogin = async () => {
     await signIn();
