@@ -8,7 +8,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView className="flex-1 bg-white dark:bg-gray-900" edges={['top', 'bottom']}>
       <View className='flex-1 mx-4 mt-2'>
-        <Text className='dark:text-white'>Hello world</Text>
+        <Text className='dark:text-white'>Home</Text>
       </View>
     </SafeAreaView>
   );
