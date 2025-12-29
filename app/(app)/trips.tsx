@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useSession } from '../../contexts/auth';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function SettingsScreen() {
+export default function TripsScreen() {
   const { profile } = useSession();
 
   return (
